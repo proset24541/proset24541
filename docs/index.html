@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Хата разработчика | Проекты</title>
   <style>
-    /* Стили для страницы */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f5f5f5;
+      background-color: #1b1b1b;
+      color: #d9d9d9;
     }
     
     .container {
@@ -21,25 +21,27 @@
     
     h1 {
       text-align: center;
-      color: #333;
+      color: #8b3ffd;
       margin-bottom: 30px;
+      text-shadow: 0 0 10px #8b3ffd, 0 0 20px #8b3ffd, 0 0 30px #8b3ffd;
     }
     
     .project-info {
-      background-color: #fff;
+      background-color: #2b2b2b;
       border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 63, 253, 0.5);
       padding: 30px;
       margin-bottom: 30px;
     }
     
     .project-info h2 {
-      color: #333;
+      color: #8b3ffd;
       margin-top: 0;
+      text-shadow: 0 0 5px #8b3ffd;
     }
     
     .project-info p {
-      color: #666;
+      color: #b9b9b9;
       margin-bottom: 20px;
     }
     
@@ -49,17 +51,45 @@
     }
     
     .contact-info h3 {
-      color: #333;
+      color: #8b3ffd;
       margin-bottom: 20px;
+      text-shadow: 0 0 5px #8b3ffd;
     }
     
     .contact-info a {
-      color: #007bff;
+      color: #4693ff;
       text-decoration: none;
+      transition: color 0.3s;
     }
     
     .contact-info a:hover {
-      color: #0056b3;
+      color: #ee730a;
+      text-decoration: underline;
+      text-shadow: 0 0 10px #ee730a;
+    }
+    
+    .hidden-message {
+      display: none;
+      background-color: #2b2b2b;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 63, 253, 0.5);
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .hidden-message h4 {
+      color: #8b3ffd;
+      margin-top: 0;
+      text-shadow: 0 0 5px #8b3ffd;
+    }
+    
+    .hidden-message p {
+      color: #b9b9b9;
+    }
+    
+    .hidden-message.show {
+      display: block;
     }
   </style>
 </head>
@@ -70,11 +100,21 @@
     <div class="project-info">
       <h2>Игры</h2>
       <p>Minecraft, Roblox (неактив), Black Russia (CRMP)</p>
+      <div class="hidden-message">
+        <h4>Секретная информация</h4>
+        <p>Ты нашел спойлер! Говорят, что разработчик работает над новой игрой, но это большой секрет.</p>
+      </div>
+      <button class="show-hidden-message">Показать секрет</button>
     </div>
     
     <div class="project-info">
       <h2>Программы</h2>
       <p>Python</p>
+      <div class="hidden-message">
+        <h4>СЕКРЕТНОЕ</h4>
+        <p>Ха! Повёлся</p>
+      </div>
+      <button class="show-hidden-message">Не нажимай!</button>
     </div>
     
     <div class="project-info">
@@ -89,11 +129,17 @@
       <h3>СВЯЗЬ:</h3>
       <p>MINECRAFT: proset24541</p>
       <p>DISCORD - prosetik</p>
-      <p><a href="https://discord.gg/SyxnUtGF2T">DISCORD SERVER</a></p>
-      <p><a href="https://forum.blackrussia.online/members/ilyas_radiev.2618707/">BLACK RUSSIA</a></p>
-      <p><a href="https://black-minecraft.com/members/prosetik.118775/">BLACK-MINECRAFT</a></p>
-      <p><a href="https://yoomoney.ru/fundraise/152Q511UMM5.240905">ЮMONEY</a></p>
+      <a href="https://discord.gg/SyxnUtGF2T">DISCORD SERVER</a>
     </div>
   </div>
+  
+  <script>
+    const showHiddenMessages = document.querySelectorAll('.show-hidden-message');
+    showHiddenMessages.forEach(button => {
+      button.addEventListener('click', () => {
+        button.previousElementSibling.classList.add('show');
+      });
+    });
+  </script>
 </body>
 </html>
