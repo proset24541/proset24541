@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "title": "Welcome to My Forum!"
+    },
+    {
+      "title": "Discuss the latest updates"
+    },
+    {
+      "title": "Share your ideas and suggestions"
+    }
+  ],
+  "importantRequests": [
+    {
+      "title": "Feature Request: Dark Mode"
+    },
+    {
+      "title": "Bug Report: Unable to upload images"
+    },
+    {
+      "title": "Feedback: Improve search functionality"
+    }
+  ]
+}
