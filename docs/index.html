@@ -143,16 +143,22 @@
       <p>Гарантирую хороший код, так как я работаю в этой сфере более 2-х лет.</p>
       <p>Могу помогать в слежке за игроками на каком либо проекте.</p>
     </div>
-      <p id="visitor-count"></p>
-    </div>
+    <p id="visitor-count"></p>
   </div>
-  
-    <div class="contact-info">
-      <!-- ... -->
-      <p id="visitor-count"></p>
-    </div>
+
+  <div class="contact-info">
+    <h3>СВЯЗЬ:</h3>
+    <p>MINECRAFT: proset24541</p>
+    <p>DISCORD - prosetik</p>
+    <p>Дискорд сервер: <a href="https://discord.gg/SyxnUtGF2T">[Тык]</a> </p>
+    <p>Блек раша: <a href="https://forum.blackrussia.online/members/ilyas_radiev.2618707/">[Тык]</a> </p>
+    <p>Black Minecraft: <a href="https://black-minecraft.com/members/prosetik.118775/">[Тык]</a> </p>
+    <p>ПОДДЕРЖКА:</p>
+    <p>ЮMoney: <a href="https://yoomoney.ru/fundraise/152Q511UMM5.240905">[Тык]</a> </p>
+    <p>ВИЗИТОРЫ</p>
+    <p id="visitor-count"></p>
   </div>
-  
+
   <script>
     let visitorsToday = 0;
 
@@ -163,33 +169,9 @@
 
     function updateVisitorCount() {
       const visitorCountElement = document.getElementById('visitor-count');
+      visitorCountElement.textContent = `Сегодня сайт посетило ${visitorsToday} игроков`;
     }
-  </script>
-</body>
-</html>
-  
-    <div class="contact-info">
-      <h3>СВЯЗЬ:</h3>
-      <p>MINECRAFT: proset24541</p>
-      <p>DISCORD - prosetik</p>
-      <p>Дискорд сервер: <a href="https://discord.gg/SyxnUtGF2T">[Тык]</a> </p>
-      <p>Блек раша: <a href="https://forum.blackrussia.online/members/ilyas_radiev.2618707/">[Тык]</a> </p>
-      <p>Black Minecraft: <a href="https://black-minecraft.com/members/prosetik.118775/">[Тык]</a> </p>
-      <p> </p>
-      <p>ПОДДЕРЖКА:</p>
-      <p> </p>
-      <p>ЮMoney: <a href="https://yoomoney.ru/fundraise/152Q511UMM5.240905">[Тык]</a> </p>
-      <p>ВИЗИТОРЫ</p>
-      <p id="visitor-count"></p>
-      function updateVisitorCount() {
-      const visitorCountElement = document.getElementById('visitor-count');
-  visitorCountElement.textContent = `Сегодня сайт посетило ${visitorsToday} игроков`;
-}
 
-    </div>
-  </div>
-  
-  <script>
     const showHiddenMessages = document.querySelectorAll('.show-hidden-message');
     showHiddenMessages.forEach(button => {
       button.addEventListener('click', () => {
