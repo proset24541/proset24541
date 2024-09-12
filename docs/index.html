@@ -5,7 +5,109 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Информация</title>
   <style>
-    /* Существующие стили */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1b1b1b;
+      color: #d9d9d9;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #8b3ffd;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #8b3ffd, 0 0 20px #8b3ffd, 0 0 30px #8b3ffd;
+    }
+    
+    .project-info {
+      background-color: #2b2b2b;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 63, 253, 0.5);
+      padding: 30px;
+      margin-bottom: 30px;
+    }
+    
+    .project-info h2 {
+      color: #8b3ffd;
+      margin-top: 0;
+      text-shadow: 0 0 5px #8b3ffd;
+    }
+    
+    .project-info p {
+      color: #b9b9b9;
+      margin-bottom: 20px;
+    }
+    
+    .contact-info {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .contact-info h3 {
+      color: #8b3ffd;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #8b3ffd;
+    }
+    
+    .contact-info a {
+      color: #4693ff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .contact-info a:hover {
+      color: #ee730a;
+      text-decoration: underline;
+      text-shadow: 0 0 10px #ee730a;
+    }
+    
+    .hidden-message {
+      display: none;
+      background-color: #2b2b2b;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 63, 253, 0.5);
+      padding: 20px;
+      margin-top: 20px;
+      text-align: center;
+    }
+    
+    .hidden-message h4 {
+      color: #8b3ffd;
+      margin-top: 0;
+      text-shadow: 0 0 5px #8b3ffd;
+    }
+    
+    .hidden-message p {
+      color: #b9b9b9;
+    }
+    
+    .hidden-message.show {
+      display: block;
+    }
+    
+    .show-hidden-message {
+      display: block;
+      margin: 20px auto 0;
+      padding: 10px 20px;
+      background-color: #8b3ffd;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .show-hidden-message:hover {
+      background-color: #6e31c8;
+    }
     /* Добавим новый стиль для блока защиты от ботов */
     .bot-protection {
       position: fixed;
