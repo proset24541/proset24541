@@ -1,305 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Информация</title>
-<style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #1b1b1b;
-      color: #d9d9d9;
-    }
-    
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px;
-    }
-    
-    h1 {
-      text-align: center;
-      color: #8b3ffd;
-      margin-bottom: 30px;
-      text-shadow: 0 0 10px #8b3ffd, 0 0 20px #8b3ffd, 0 0 30px #8b3ffd;
-    }
-    
-    .project-info {
-      background-color: #2b2b2b;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 63, 253, 0.5);
-      padding: 30px;
-      margin-bottom: 30px;
-    }
-    
-    .project-info h2 {
-      color: #8b3ffd;
-      margin-top: 0;
-      text-shadow: 0 0 5px #8b3ffd;
-    }
-    
-    .project-info p {
-      color: #b9b9b9;
-      margin-bottom: 20px;
-    }
-    
-    .contact-info {
-      text-align: center;
-      margin-top: 40px;
-    }
-    
-    .contact-info h3 {
-      color: #8b3ffd;
-      margin-bottom: 20px;
-      text-shadow: 0 0 5px #8b3ffd;
-    }
-    
-    .contact-info a {
-      color: #4693ff;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-    
-    .contact-info a:hover {
-      color: #ee730a;
-      text-decoration: underline;
-      text-shadow: 0 0 10px #ee730a;
-    }
-    
-    .hidden-message {
-      display: none;
-      background-color: #2b2b2b;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 63, 253, 0.5);
-      padding: 20px;
-      margin-top: 20px;
-      text-align: center;
-    }
-    
-    .hidden-message h4 {
-      color: #8b3ffd;
-      margin-top: 0;
-      text-shadow: 0 0 5px #8b3ffd;
-    }
-    
-    .hidden-message p {
-      color: #b9b9b9;
-    }
-    
-    .hidden-message.show {
-      display: block;
-    }
-    
-    .show-hidden-message {
-      display: block;
-      margin: 20px auto 0;
-      padding: 10px 20px;
-      background-color: #8b3ffd;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-    
-    .show-hidden-message:hover {
-      background-color: #6e31c8;
-    }
-    .bot-protection {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(27, 27, 27, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .bot-protection-content {
-      background-color: #2b2b2b;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 0 10px rgba(139, 63, 253, 0.5);
-      padding: 30px;
-      text-align: center;
-    }
-
-    .bot-protection-content h3 {
-      color: #8b3ffd;
-      margin-top: 0;
-      text-shadow: 0 0 5px #8b3ffd;
-    }
-
-    .bot-protection-content p {
-      color: #b9b9b9;
-      margin-bottom: 20px;
-    }
-
-    .bot-protection-checkbox {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .bot-protection-checkbox input {
-      margin-right: 10px;
-    }
-
-    .bot-protection-checkbox label {
-      color: #b9b9b9;
-    }
-
-
-    /* Стиль для кнопки */
-    .show-content {
-      display: block;
-      margin: 20px auto 0;
-      padding: 10px 20px;
-      background-color: #8b3ffd;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 16px;
-      font-family: Arial, sans-serif;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .show-content:hover {
-      background-color: #6e31c8;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игровой Дизайн</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #282c34;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        header {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        nav {
+            margin-bottom: 20px;
+        }
+        .button {
+            background-color: #61dafb;
+            border: none;
+            color: #000;
+            padding: 15px 30px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #21a1f1;
+        }
+    </style>
 </head>
 <body>
-<div class="bot-protection">
-<div class="bot-protection-content">
-<h3>Защита от ботов!</h3>
-<p>proset24541 проверяет Вас на бота.</p>
-<div class="bot-protection-checkbox">
-<input type="checkbox" id="bot-protection-checkbox">
-<label for="bot-protection-checkbox">Нажмите на галочку снизу, чтобы подтвердить, что Вы не робот.</label>
-</div>
-<button class="show-content" disabled>Загрузить сайт</button>
-</div>
-</div>
 
-<div class="container" style="display: none;">
-<!-- Существующий контент сайта -->
-<h1>Информация о web-разработчике proset24541</h1>
+<header>
+    <nav>
+        <button class="button" onclick="loadPage('main')">Главная</button>
+        <button class="button" onclick="loadPage('order')">Заказ</button>
+    </nav>
+</header>
 
-<div class="project-info">
-  <h2>Игры</h2>
-  <p>Minecraft, Roblox (неактив), Black Russia (CRMP)</p>
-  <div class="hidden-message">
-    <h4>Точная информация</h4>
-    <p>Minecraft - до 6-ти часов </p> 
-    <p>Roblox - до 1 часа </p>
-    <p>Black Russia (CRMP) - до 4-х часов</p>
-  </div>
-  <button class="show-hidden-message">Точная информация</button>
+<div id="content">
+    <h1 id="pageTitle">Главная</h1>
+    <p>Здесь будет информация.</p>
 </div>
-
-<div class="project-info">
-  <h2>Программы</h2>
-  <p>Python</p>
-  <div class="hidden-message">
-    <h4>Что это?</h4>
-    <p>Python – это популярный язык программирования, который можно использовать для создания дискорд ботов на сервере.</p>
-  </div>
-  <button class="show-hidden-message">Что это?</button>
-</div>
-
-<div class="project-info">
-  <h2>Опыт</h2>
-  <p>Имею опыт в программе Python (для создания Discord/VK/Telegram ботов). Пишу ботов на пайтоне, хостинг с меня. (За хостинг оплата 125руб/месяц) (За код тоже нужно оплатить, но только один раз)</p>
-  <p>Также перевожу плагины, вплоть до самого файла (то, что нельзя сменить в ланге, конфиге).</p>
-  <p>Гарантирую хороший код, так как я работаю в этой сфере более 2-х лет.</p>
-  <p>Могу помогать в слежке за игроками на каком либо проекте.</p>
-</div>
-</div>
-
-  <div class="contact-info">
-    <h3>Связь с разработчиком:</h3>
-    <p><img src="https://i.postimg.cc/tg0BKLYS/16.jpg" alt="Не удалось загрузить изображение" width="20" height="20">MINECRAFT: proset24541</p>
-    <p><img src="https://i.postimg.cc/gJWBZfpX/15.jpg" alt="Не удалось загрузить изображение" width="20" height="20">DISCORD - prosetik</p>
-    <p></p>
-    <p><img src="https://i.postimg.cc/gJWBZfpX/15.jpg" alt="Не удалось загрузить изображение" width="20" height="20">Дискорд сервер: <a href="https://discord.gg/SyxnUtGF2T">[Тык]</a> </p>
-    <p><img src="https://i.postimg.cc/NffSbqHR/14.jpg" alt="Не удалось загрузить изображение" width="20" height="20">Блек раша: <a href="https://forum.blackrussia.online/members/ilyas_radiev.2618707/">[Тык]</a> </p>
-    <p><img src="https://i.postimg.cc/pdng8fn7/1.webp" alt="Не удалось загрузить изображение" width="20" height="20">Black Minecraft: <a href="https://black-minecraft.com/members/prosetik.118775/">[Тык]</a> </p>
-    <hr>
-    <p>ПОДДЕРЖКА:</p>
-    <p><img src="https://i.postimg.cc/Fsr5qk2d/13.jpg" alt="Не удалось загрузить изображение" width="20" height="20">ЮMoney: <a href="https://yoomoney.ru/fundraise/152Q511UMM5.240905">[Тык]</a> </p>
-    <hr>
-    <p> Информация о сайте </p>
-    <p id="visitor-count"></p>
-    <img src="https://i.postimg.cc/dtYt00gw/11.jpg" alt="Не удалось загрузить изображение" width="20" height="20"><p id="visitor-count"></p>
-  </div>
 
 <script>
-let visitorsToday = 0;
+    function loadPage(page) {
+        const title = document.getElementById('pageTitle');
+        const content = document.getElementById('content');
 
-document.addEventListener('DOMContentLoaded', () => {
-  visitorsToday++;
-  updateVisitorCount();
-});
-
-function updateVisitorCount() {
-  const visitorCountElement = document.getElementById('visitor-count');
-  visitorCountElement.textContent = `Сегодня сайт посетило ${visitorsToday} игроков`;
-}
-
-const showHiddenMessages = document.querySelectorAll('.show-hidden-message');
-showHiddenMessages.forEach(button => {
-  button.addEventListener('click', () => {
-    button.previousElementSibling.classList.add('show');
-  });
-});
-
-const botProtectionCheckbox = document.getElementById('bot-protection-checkbox');
-const showContentButton = document.querySelector('.show-content');
-const container = document.querySelector('.container');
-
-let mouseMovements = 0;
-let mouseMovementTimeout;
-
-document.addEventListener('mousemove', () => {
-  mouseMovements++;
-  clearTimeout(mouseMovementTimeout);
-  mouseMovementTimeout = setTimeout(() => {
-    if (mouseMovements > 10) {
-      showContentButton.disabled = false;
-      document.querySelector('.bot-protection').style.display = 'none';
-      container.style.display = 'block';
-    } else {
-      showContentButton.disabled = true;
+        if (page === 'main') {
+            title.textContent = 'Главная';
+            content.querySelector('p').textContent = 'Здесь будет информация.';
+        } else if (page === 'order') {
+            title.textContent = 'Заказ';
+            content.querySelector('p').textContent = 'На данный момент идёт тестирование.';
+        }
     }
-    mouseMovements = 0;
-  }, 2000); // Проверяем движения мыши в течение 2 секунд
-});
-
-botProtectionCheckbox.addEventListener('change', () => {
-  showContentButton.disabled = !botProtectionCheckbox.checked;
-});
-
-showContentButton.addEventListener('click', () => {
-  showContentButton.textContent = 'Ожидайте, это займет время';
-  showContentButton.disabled = true;
-  setTimeout(() => {
-    document.querySelector('.bot-protection').style.display = 'none';
-    container.style.display = 'block';
-  }, 3000); // Имитация загрузки контента
-});
-
-window.addEventListener('beforeunload', () => {
-  document.querySelector('.bot-protection').style.display = 'flex';
-  container.style.display = 'none';
-});
 </script>
+
 </body>
 </html>
