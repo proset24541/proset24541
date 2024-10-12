@@ -15,14 +15,14 @@
         </nav>
     </header>
     <main>
-        <div class="post" onclick="openPost('post1')">
+        <div class="post" onclick="openPost('post1.html')">
             <h3>Что это?</h3>
             <img src="YOUR_IMAGE_URL" alt="Пост 1">
             <p>Кликни сюда для просмотра информации о посте.</p>
             <span class="tags">Важно</span>
             <p>Дата написания: 12.10.2024</p>
         </div>
-        <div class="post" onclick="openPost('post2')">
+        <div class="post" onclick="openPost('post2.html')">
             <h3>HALLOWEEN, 👻 Обновление</h3>
             <p>Воу! Жуткое обновление войдёт в историю!</p>
             <span class="tags">Важно</span>
@@ -30,5 +30,10 @@
         </div>
     </main>
     <script src="script.js"></script>
+    <script>
+        function openPost(post) {
+            window.location.href = post;
+        }
+    </script>
 </body>
 </html>
