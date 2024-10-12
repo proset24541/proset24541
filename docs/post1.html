@@ -3,25 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>BETA! Пост</title>
+    <title>Пост #1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .post {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            margin: auto;
+        }
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .username {
+            font-weight: bold;
+        }
+        .status {
+            color: #0099ff; /* Цвет для светящихся статусов */
+            font-size: 0.9em;
+            margin-left: 5px;
+        }
+        .post-text {
+            margin-top: 10px;
+        }
+        .image {
+            margin-top: 10px;
+            width: 100%;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 <body>
 
 <div class="post">
-    <h1>Что это?</h1>
-    <div class="author">
-        <img src="URL_ДЛЯ_ИЗОБРАЖЕНИЯ_ПРОФИЛЯ" alt="Профиль" class="profile-image">
-        <div class="author-info">
-            <span class="admin-tag">ADMIN</span> proset24541
+    <div class="user-info">
+        <img src="https://i.postimg.cc/DZ2sRw1d/image.png" alt="Аватар пользователя" class="avatar">
+        <div>
+            <span class="username">proset24541</span>
+            <span class="status">Глава отдела</span>
+            <span class="status">Администрация проекта</span>
         </div>
     </div>
-    <p>Приветствую тебя, человек! (Далее сам допишу)</p>
-    <div class="images">
-        <img src="URL_КАРТИНКИ_1" alt="Картинка 1">
-        <img src="URL_КАРТИНКИ_2" alt="Картинка 2">
-        <img src="URL_КАРТИНКИ_3" alt="Картинка 3">
+    <div class="post-text">
+        Всех приветствую! Вы лучшие
     </div>
+    <img src="https://i.postimg.cc/T1KyXL1m/image.gif" alt="Описание изображения" class="image">
 </div>
 
 </body>
