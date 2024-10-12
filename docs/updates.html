@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Обновления</title>
+</head>
+<body>
+    <header>
+        <h1>Обновления</h1>
+        <nav>
+            <a href="index.html" class="nav-link">Главная</a>
+            <a href="info.html" class="nav-link">Информация</a>
+        </nav>
+    </header>
+    <main>
+        <div class="post" onclick="openPost('post1')">
+            <h3>Что это?</h3>
+            <img src="YOUR_IMAGE_URL" alt="Пост 1">
+            <p>Кликни сюда для просмотра информации о посте.</p>
+            <span class="tags">Важно</span>
+            <p>Дата написания: 12.10.2024</p>
+        </div>
+        <div class="post" onclick="openPost('post2')">
+            <h3>HALLOWEEN, 👻 Обновление</h3>
+            <p>Воу! Жуткое обновление войдёт в историю!</p>
+            <span class="tags">Важно</span>
+            <p>Дата написания: 13.10.2024</p>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
