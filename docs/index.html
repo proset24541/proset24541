@@ -3,107 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обновления</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
-        .updates {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .update-card {
-            background-color: #1e1e1e;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 10px;
-            width: 300px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-        .update-card:hover {
-            transform: scale(1.05);
-        }
-        .tags {
-            font-size: 0.9em;
-            color: #bbb;
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background-color: #2e2e2e;
-            border-radius: 15px;
-            padding: 20px;
-            width: 400px;
-            position: relative;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .close:hover,
-        .close:focus {
-            color: #fff;
-            text-decoration: none;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <title>Главная</title>
 </head>
 <body>
-
-<h1>Обновления</h1>
-<div class="updates">
-    <div class="update-card" onclick="openModal()">
-        <h2>CROCODILE</h2>
-        <p>Крокодил - отгадай рисунок.</p>
-        <div class="tags">Тэги: Creative+, Интересно</div>
-    </div>
-</div>
-
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <p>dev proset24541</p>
-    </div>
-</div>
-
-<script>
-    function openModal() {
-        document.getElementById("myModal").style.display = "flex";
-    }
-
-    function closeModal() {
-        document.getElementById("myModal").style.display = "none";
-    }
-
-    window.onclick = function(event) {
-        if (event.target == document.getElementById("myModal")) {
-            closeModal();
-        }
-    }
-</script>
-
+    <header>
+        <h1>Главная</h1>
+        <nav>
+            <a href="updates.html" class="nav-link">Обновления</a>
+            <a href="info.html" class="nav-link">Информация</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Описание: тест</h2>
+        <p>Текст: текст</p>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
