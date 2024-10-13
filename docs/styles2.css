@@ -1,0 +1,51 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.hamburger {
+    display: none; /* Скрываем кнопку по умолчанию */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Показываем кнопку на мобильных устройствах */
+    }
+
+    .nav-links {
+        display: none; /* Скрываем ссылки по умолчанию */
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Позиционируем меню под заголовком */
+        right: 10px;
+        background-color: white;
+        border: 1px solid #ccc;
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        display: flex; /* Показываем меню при активации */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Отступы для вертикального меню */
+    }
+}
