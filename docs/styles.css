@@ -45,3 +45,21 @@ main {
     margin-top: 10px;
     display: inline-block;
 }
+
+.coin {
+    width: 100px;
+    height: 100px;
+    background-color: gold;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.coin:active {
+    transform: scale(0.9);
+}
+
+.stats {
+    margin-top: 20px;
+}
