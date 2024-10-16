@@ -10,7 +10,7 @@ coin.addEventListener('click', () => {
     // Добавление анимации при клике
     coin.classList.add('clicked');
 
-    setTimeout(() => {
+    setTimeout(() => { 
         coin.classList.remove('clicked');
     }, 200); // Очищаем класс после 200 мс
 });
