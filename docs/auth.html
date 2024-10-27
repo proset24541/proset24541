@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация и авторизация</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .notification { position: fixed; top: 20px; right: 20px; padding: 10px; border-radius: 5px; color: white; }
+        .error { background-color: red; }
+        .success { background-color: green; }
+    </style>
+</head>
+<body>
+
+<h2>Регистрация</h2>
+<input type="text" id="register_nickname" placeholder="Ник"><br>
+<input type="password" id="register_password" placeholder="Пароль"><br>
+<button onclick="register()">Зарегистрироваться</button>
+
+<h2>Авторизация</h2>
+<input type="text" id="login_nickname" placeholder="Ник"><br>
+<input type="password" id="login_password" placeholder="Пароль"><br>
+<button onclick="login()">Авторизироваться</button>
+
+<div id="notification" class="notification" style="display:none;"></div>
+
+<script>
+async function register() {
+    const nickname = document.getElementById('register_nickname').value;
+    const password = document.getElementById('register_password').value;
+
+    const response = await fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nickname, password })
+    });
+    const result = await response.json();
+    showNotification(result.message, result.success);
+}
+
+async function login() {
+    const nickname = document.getElementById('login_nickname').value;
+    const password = document.getElementById('login_password').value;
+
+    const response = await fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nickname, password })
+    });
+    const result = await response.json();
+    showNotification(result.message, result.success);
+}
+
+function showNotification(message, success) {
+    const notification = document.getElementById('notification');
+    notification.innerText = message;
+    notification.className = 'notification ' + (success ? 'success' : 'error');
+    notification.style.display = 'block';
+    setTimeout(() => { notification.style.display = 'none'; }, 3000);
+}
+</script>
+
+</body>
+</html>
