@@ -18,7 +18,7 @@
         border: 1px solid white;
         margin: 20px;
         padding: 10px;
-        height: 100px;
+        height: 200px; /* Увеличение высоты консольного окна */
         overflow: auto;
     }
 </style>
@@ -50,7 +50,7 @@ function checkPasswordAndSend() {
 
 function sendMessage(message) {
     // Отправка POST запроса с сообщением
-    fetch("http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=2&token=11301542674webtranslatejust21972657931", {
+    fetch("http://d90930x1.beget.tech/PocketCodeDB/DATABASE/post/post.php", {
         method: 'POST',
         body: JSON.stringify({ message: message }),
         headers: {
@@ -60,7 +60,7 @@ function sendMessage(message) {
     
     // Отправка GET запроса через 3 секунды
     setTimeout(() => {
-        fetch("ENCRYPTED_URL_FOR_GET_REQUEST")
+        fetch("http://d90930x1.beget.tech/PocketCodeDB/DATABASE/get/get.php?slot=2&token=11301542674webtranslatejust21972657931&get_pe=" + message)
             .then(response => response.text())
             .then(data => {
                 writeToConsole(`Результат GET запроса: ${data}`);
