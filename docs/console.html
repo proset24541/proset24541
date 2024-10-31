@@ -1,93 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Командный ввод</title>
-<style>
-body {
-  background-color: #800080; /* Фиолетовый фон */
-  font-family: monospace;
-  color: white;
-}
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 500px;
-  margin: 50px auto;
-}
-input[type="text"] {
-  padding: 10px;
-  margin-bottom: 10px;
-  width: 100%;
-  background-color: #A020F0;
-  color: white;
-  border: 1px solid #6A0DAD;
-}
-button {
-  padding: 10px 20px;
-  background-color: #A020F0;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-.output {
-  border: 1px solid white;
-  padding: 10px;
-  margin-top: 20px;
-  width: 100%;
-  background-color: #6A0DAD;
-  overflow-y: scroll;
-  height: 200px;
-}
-</style>
+    <title>Игровой стиль</title>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var url = "http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=1&token=11301542674webtranslatejust21972657931";
+            
+            fetch(url)
+            .then(response => response.text())
+            .then(data => {
+                if (password === data.trim()) {
+                    var command = document.getElementById("command").value;
+                    var postData = { command: command };
+                    fetch("your-post-url", {
+                        method: "POST",
+                        body: JSON.stringify(postData)
+                    })
+                    .then(response => response.text())
+                    .then(data => {
+                        setTimeout(function() {
+                            var consoleOutputUrl = "http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=2&token=11301542674webtranslatejust21972657931";
+                            
+                            fetch(consoleOutputUrl)
+                            .then(response => response.text())
+                            .then(data => {
+                                console.log(data);
+                            })
+                        }, 3000);
+                    });
+                }
+            });
+        }
+    </script>
+    <style>
+        body {
+            background-color: #2c3e50;
+            color: #ffffff;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #8e44ad;
+            border-radius: 5px;
+            background-color: #34495e;
+            color: #ffffff;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px;
+            border: 2px solid #8e44ad;
+            border-radius: 5px;
+            background-color: #8e44ad;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        #console {
+            width: 80%;
+            height: 200px;
+            margin: 20px;
+            padding: 10px;
+            border: 2px solid #8e44ad;
+            border-radius: 5px;
+            background-color: #34495e;
+            color: #ffffff;
+            overflow: auto;
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-  <h1>Командный ввод</h1>
-  <input type="text" id="command" placeholder="Первое Команда">
-  <input type="password" id="password" placeholder="Пароль">
-  <button onclick="submitCommand()">Отправить</button>
-  <div class="output" id="output"></div>
-</div>
+    <input type="text" id="team" placeholder="Первое Команда">
+    <input type="text" id="password" placeholder="Второе Пароль">
+    <button onclick="checkPassword()">Отправить</button>
 
-<script>
-const passwordURL = 'http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=1&token=11301542674webtranslatejust21972657931'; //  **НЕБЕЗОПАСНО!**  Замените на безопасный метод авторизации
-const responseURL = 'http://d90930x1.beget.tech/PocketCodeDB/DATABASE/echo/echo.php?slot=2&token=11301542674webtranslatejust21972657931'; // **НЕБЕЗОПАСНО!** Замените на безопасный метод получения ответа
-
-
-async function submitCommand() {
-  const command = document.getElementById('command').value;
-  const password = document.getElementById('password').value;
-  const output = document.getElementById('output');
-
-  try {
-    const passwordResponse = await fetch(passwordURL);
-    const correctPassword = await passwordResponse.text();
-
-    if (password === correctPassword) {
-      const data = { command }; // Данные для отправки на сервер
-
-      fetch(responseURL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
-      .then(response => response.text())
-      .then(data => {
-        setTimeout(() => {
-          output.innerText = data;
-        }, 3000);
-      });
-      output.innerText = "Запрос отправлен...";
-    } else {
-      output.innerText = "Неверный пароль!";
-    }
-  } catch (error) {
-    output.innerText = "Ошибка: " + error;
-  }
-}
-</script>
+    <div id="console" style="display:none;"></div>
 </body>
 </html>
