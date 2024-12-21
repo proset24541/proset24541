@@ -13,6 +13,9 @@
         }
         .container {
             margin: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; / Центрируем содержимое /
         }
         .window {
             border: 2px solid #ff0000;
@@ -56,9 +59,7 @@
             transform: scale(0.9);
         }
         .server-status {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            margin: 20px 0; / Отступ для блока состояния сервера /
             border: 2px solid #ff0000;
             border-radius: 15px;
             padding: 10px;
@@ -69,8 +70,10 @@
         / Медиа-запросы для мобильных устройств /
         @media (max-width: 768px) {
             .server-status {
-                position: static; / Сбрасываем позицию /
-                margin-top: 20px; / Отступ сверху /
+                order: 4; / Позиционируем block в конце /
+            }
+            .window:last-child {
+                order: 3; / Позиционируем блок связи перед блоком с серверами /
             }
         }
     </style>
