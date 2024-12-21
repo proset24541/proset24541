@@ -65,10 +65,17 @@
             background-color: #2a2a2a;
             box-shadow: 0 0 10px #ff0000;
         }
+
+        / Медиа-запросы для мобильных устройств /
+        @media (max-width: 768px) {
+            .server-status {
+                position: static; / Сбрасываем позицию /
+                margin-top: 20px; / Отступ сверху /
+            }
+        }
     </style>
 </head>
 <body>
-
 
     <div class="container">
         <img src="https://i.postimg.cc/brMVShQS/avatar-Body5.png" alt="Профиль" />
@@ -95,19 +102,19 @@
             <button class="button" onclick="window.location.href='https://forum.blackrussia.online/members/ilyas_radiev.2618707/'">Black Russia</button>
             <button class="button" onclick="window.location.href='https://www.donationalerts.com/r/ilyasdev'">DonationAlerts</button>
         </div>
-    </div>
-
-    <div class="server-status">
-        <h2 class="neon">Играю на серверах:</h2>
-        <div>
-            <img src="https://i.postimg.cc/RFV63k05/logoML.png" alt="MineLand" />
-            <p>MineLand</p>
-            <p>Онлайн сервера: <span id="server1-status">загрузка...</span></p>
-        </div>
-        <div>
-            <img src="https://i.postimg.cc/Qtp55QQ1/i-5.png" alt="Неизвестно" />
-            <p>неизвестно</p>
-            <p>Онлайн сервера: <span id="server2-status">неизвестно</span></p>
+        
+        <div class="server-status">
+            <h2 class="neon">Играю на серверах:</h2>
+            <div>
+                <img src="https://i.postimg.cc/RFV63k05/logoML.png" alt="MineLand" />
+                <p>MineLand</p>
+                <p>Онлайн сервера: <span id="server1-status">загрузка...</span></p>
+            </div>
+            <div>
+                <img src="https://i.postimg.cc/Qtp55QQ1/i-5.png" alt="Неизвестно" />
+                <p>неизвестно</p>
+                <p>Онлайн сервера: <span id="server2-status">неизвестно</span></p>
+            </div>
         </div>
     </div>
 
@@ -122,11 +129,11 @@
 
         async function checkServerStatus() {
             try {
-                const response = await fetch(`https://api.mcsrvstat.us/2/${serverIP}:${serverPort}`);
+                const response = await fetch(https://api.mcsrvstat.us/2/${serverIP}:${serverPort});
                 const data = await response.json();
 
                 if (data.online) {
-                    document.getElementById('server1-status').innerText = `${data.players.online}/${data.players.max}`;
+                    document.getElementById('server1-status').innerText = ${data.players.online}/${data.players.max};
                 } else {
                     document.getElementById('server1-status').innerText = 'оффлайн';
                 }
