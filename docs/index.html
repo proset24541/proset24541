@@ -69,6 +69,53 @@
 </head>
 <body>
 
+<!-- ... существующий код ... -->
+<div class="random-number-generator">
+    <h2 class="neon">Генератор рандомного числа</h2>
+    <input type="number" id="min" placeholder="Минимум" />
+    <input type="number" id="max" placeholder="Максимум" />
+    <button class="button" id="generate">Сгенерировать</button>
+    <p id="result" class="neon hidden"></p>
+</div>
+<!-- ... существующий код ... -->
+
+<script>
+    document.getElementById('generate').addEventListener('click', function() {
+        const min = parseInt(document.getElementById('min').value);
+        const max = parseInt(document.getElementById('max').value);
+        if (!isNaN(min) && !isNaN(max) && min < max) {
+            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = `Число: ${randomNumber}`;
+            resultElement.classList.remove('hidden');
+        } else {
+            alert('Пожалуйста, введите корректные значения.');
+        }
+    });
+</script>
+
+<style>
+    .random-number-generator {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        border: 2px solid #ff0000;
+        border-radius: 15px;
+        padding: 20px;
+        background-color: #2a2a2a;
+        box-shadow: 0 0 10px #ff0000;
+    }
+    .random-number-generator input {
+        margin: 5px;
+        padding: 5px;
+        border: 1px solid #ff0000;
+        border-radius: 5px;
+        background-color: #1a1a1a;
+        color: #fff;
+    }
+</style>
+
+    
     <div class="container">
         <img src="https://i.postimg.cc/brMVShQS/avatar-Body5.png" alt="Профиль" />
         <h1 class="neon">proset24541</h1>
