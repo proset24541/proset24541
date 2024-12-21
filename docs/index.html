@@ -5,79 +5,83 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профиль</title>
     <style>
-    body {
-        background-color: #1a1a1a;
-        color: #fff;
-        font-family: Arial, sans-serif;
-        text-align: center;
-    }
-    .container {
-        margin: 20px;
-    }
-    .window {
-        border: 2px solid #ff0000;
-        border-radius: 15px;
-        padding: 20px;
-        margin: 20px auto;
-        width: 300px;
-        box-shadow: 0 0 10px #ff0000;
-        background-color: #2a2a2a;
-    }
-    .neon {
-        color: #ff0000;
-        text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
-    }
-    .button {
-        background-color: #ff0000;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin: 5px;
-    }
-    .button:hover {
-        box-shadow: 0 0 20px #ff0000;
-    }
-    .hidden {
-        display: none;
-    }
-    img {
-        border-radius: 50%;
-        width: 100px;
-        height: 100px;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    img:hover {
-        opacity: 0.8;
-    }
-    img:active {
-        transform: scale(0.9);
-    }
-    .server-status {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        border: 2px solid #ff0000;
-        border-radius: 15px;
-        padding: 10px;
-        background-color: #2a2a2a;
-        box-shadow: 0 0 10px #ff0000;
-    }
-    
-    / Медиазапрос для мобильных устройств /
-    @media (max-width: 768px) {
-        .server-status {
-            position: relative;
-            margin-top: 20px; / Отступ сверху для мобильных устройств /
-            top: auto; / Убираем верхний отступ /
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
         }
-    }
-</style>
+        .container {
+            margin: 20px;
+        }
+        .window {
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            box-shadow: 0 0 10px #ff0000;
+            background-color: #2a2a2a;
+        }
+        .neon {
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        }
+        .button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        .button:hover {
+            box-shadow: 0 0 20px #ff0000;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        img:hover {
+            opacity: 0.8;
+        }
+        img:active {
+            transform: scale(0.9);
+        }
+        .server-status {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 10px;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 10px #ff0000;
+        }
+
+        / Медиазапрос для мобильных устройств /
+        @media (max-width: 768px) {
+            .server-status {
+                position: relative; / Изменяем позиционирование на относительное /
+                margin-top: 40px; / Добавим отступ сверху /
+                top: auto; / Сбрасываем верхний отступ /
+                right: auto; / Убираем правый отступ /
+                width: 90%; / Устанавливаем ширину /
+                margin-left: auto; / Центрируем по горизонтали /
+                margin-right: auto; / Центрируем по горизонтали /
+                box-shadow: none; / Убираем тень для простоты /
+            }
+        }
+    </style>
 </head>
 <body>
-
 
     <div class="container">
         <img src="https://i.postimg.cc/brMVShQS/avatar-Body5.png" alt="Профиль" />
@@ -131,11 +135,11 @@
 
         async function checkServerStatus() {
             try {
-                const response = await fetch(`https://api.mcsrvstat.us/2/${serverIP}:${serverPort}`);
+                const response = await fetch(https://api.mcsrvstat.us/2/${serverIP}:${serverPort});
                 const data = await response.json();
 
                 if (data.online) {
-                    document.getElementById('server1-status').innerText = `${data.players.online}/${data.players.max}`;
+                    document.getElementById('server1-status').innerText = ${data.players.online}/${data.players.max};
                 } else {
                     document.getElementById('server1-status').innerText = 'оффлайн';
                 }
