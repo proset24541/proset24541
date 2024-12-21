@@ -3,23 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обо мне</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Профиль</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            margin: 20px;
+        }
+        .window {
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+            box-shadow: 0 0 10px #ff0000;
+            background-color: #2a2a2a;
+        }
+        .neon {
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        }
+        .button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        .button:hover {
+            box-shadow: 0 0 20px #ff0000;
+        }
+        .hidden {
+            display: none;
+        }
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
+
     <div class="container">
-        <div class="avatar">
-            <img src="https://post-images.org/photo-page.php?photo=fKiwaA0O" alt="ого ава">
+        <img src="https://post-images.org/photo-page.php?photo=wpNzTnrL" alt="Профиль" />
+        <h1 class="neon">proset24541</h1>
+        <p>Разработчик</p>
+
+        <div class="window">
+            <h2 class="neon">Игры</h2>
+            <ul>
+                <li>Minecraft</li>
+                <li>Black Russia</li>
+            </ul>
         </div>
-        <h1>ОБО МНЕ</h1>
-        <p>Тут укажу информацию</p>
-        <hr>
-        <h2>Социальные сети:</h2>
-        <ul>
-            <li>Discord: ilyasmy</li>
-        </ul>
-        <h2>Пожертвование:</h2>
-        <a href="https://www.donationalerts.com/r/ilyasdev" class="donate-button">КЛИК</a>
+
+        <div class="window">
+            <h2 class="neon">Хобби</h2>
+            <p>Разработка телеграм/дискорд ботов на языке программирования Python.</p>
+        </div>
+
+        <div class="window">
+            <h2 class="neon">Связь</h2>
+            <button class="button" id="discordButton">Discord</button>
+            <span id="discordText" class="hidden neon">ilyasmy</span>
+            <br>
+            <button class="button" onclick="window.location.href='https://forum.blackrussia.online/members/ilyas_radiev.2618707/'">Black Russia</button>
+            <button class="button" onclick="window.location.href='https://www.donationalerts.com/r/ilyasdev'">DonationAlerts</button>
+        </div>
     </div>
+
+    <script>
+        document.getElementById('discordButton').onclick = function() {
+            this.classList.add('hidden');
+            document.getElementById('discordText').classList.remove('hidden');
+        };
+    </script>
+
 </body>
 </html>
