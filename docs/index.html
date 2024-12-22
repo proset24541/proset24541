@@ -75,11 +75,60 @@
             background-color: #ff0000;
             box-shadow: 0 0 10px #ff0000;
         }
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 5px;
+        }
+	.burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+	.menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            z-index: 100;
+        }
+        .menu.active {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .tabs {
+                display: none; /* Скрываем вкладки на мобильных устройствах */
+            }
+            .burger {
+                display: flex; /* Показываем бургер-меню на мобильных устройствах */
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="tabs">
+        <div class="tab" onclick="window.location.href='http://my.prosetik.ru'">Главная</div>
+        <div class="tab" onclick="window.location.href='http://my.prosetik.ru/servers'">Сервера</div>
+        <div class="tab" onclick="window.location.href='http://my.prosetik.ru/generators'">Генераторы</div>
+    </div>
+    <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="menu" id="menu">
         <div class="tab" onclick="window.location.href='http://my.prosetik.ru'">Главная</div>
         <div class="tab" onclick="window.location.href='http://my.prosetik.ru/servers'">Сервера</div>
         <div class="tab" onclick="window.location.href='http://my.prosetik.ru/generators'">Генераторы</div>
@@ -118,6 +167,15 @@
             document.getElementById('discordText').classList.remove('hidden');
         };	
     </script>
-	
+    <script>
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        // Загружаем статус при загрузке страницы
+        window.onload = fetchServerStatus;
+    </script>	
 </body>
 </html>
