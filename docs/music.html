@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            position: relative;
+        }
+        .tab {
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tab:hover {
+            background-color: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .music-player {
+            margin: 20px auto;
+            width: 300px; /* Уменьшаем ширину плеера */
+            background-color: #2a2a2a;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between; /* Распределяем кнопки по краям */
+            margin: 10px 0;
+        }
+        .button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px; /* Уменьшаем размеры кнопок */
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            box-shadow: 0 0 20px #ff0000;
+        }
+        .progress {
+            width: 100%;
+            height: 5px;
+            background: #444;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px 0;
+            cursor: pointer; /* Указатель на курсор */
+        }
+        .progress-bar {
+            height: 100%;
+            background: #ff0000;
+            width: 0;
+            transition: width 0.1s;
+        }
+        img {
+            border-radius: 10px;
+            width: 100%; /* Уменьшаем ширину обложки */
+            height: auto; /* Автоматическая высота */
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        img:hover {
+            opacity: 0.8;
+        }
+		        body {
+            background-color: #1a1a1a;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .tabs {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            position: relative;
+        }
+        .tab {
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .tab:hover {
+            background-color: #ff0000;
+            box-shadow: 0 0 10px #ff0000;
+        }
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #2a2a2a;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .server-title {
+            font-size: 24px;
+            color: #ff0000;
+            margin: 20px 0;
+        }
+        .server-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .server-item {
+            border: 2px solid #ff0000;
+            border-radius: 15px;
+            padding: 10px;
+            background-color: #2a2a2a;
+            text-align: center;
+        }
+        img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        img:hover {
+            opacity: 0.8; /* Прозрачность при наведении */
+        }
+        img:active {
+            transform: scale(0.9); /* Уменьшение при нажатии */
+        }
+        img:focus {
+            outline: none; /* Убираем обводку при фокусе */
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 20px;
+            background-color: #2a2a2a;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            z-index: 100;
+        }
+        .menu.active {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .tabs {
+                display: none; /* Скрываем вкладки на мобильных устройствах */
+            }
+            .burger {
+                display: flex; /* Показываем бургер-меню на мобильных устройствах */
+            }
+        }
+		        .neon {
+            color: #ff0000;
+            text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000;
+        }
+        .button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+        }
+        .button:hover {
+            box-shadow: 0 0 20px #ff0000;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tabs">
+        <div class="tab" onclick="window.location.href='https://my.prosetik.ru'">Главная</div>
+        <div class="tab" onclick="window.location.href='https://my.prosetik.ru/servers'">Сервера</div>
+        <div class="tab" onclick="window.location.href='https://my.prosetik.ru/generators'">Генераторы</div>
+    </div>
+    <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <div class="menu" id="menu">
+        <div class="tab" onclick="window.location.href='https://my.prosetik.ru'">Главная</div>
+        <div class="tab" onclick="window.location.href='https://my.prosetik.ru/servers'">Сервера</div>
+        <div class="tab" onclick="window.location.href='https://my.prosetik.ru/generators'">Генераторы</div>
+    </div>
+
+    <h1 class="neon">Музыка</h1>
+
+    <div class="music-player">
+        <img id="cover" src="" alt="Обложка" />
+        <div class="track-info">
+            <h2 id="track-title">Название трека</h2>
+        </div>
+        <div class="controls">
+            <button class="button" onclick="prevTrack()">Назад</button>
+            <button class="button" id="play-pause" onclick="togglePlay()">▶️</button>
+            <button class="button" onclick="nextTrack()">Вперёд</button>
+        </div>
+        <div class="progress" id="progress">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+    </div>
+
+    <script>
+        const tracks = [
+            {
+                title: "Бумбокс - Вахтёрам",
+                src: "https://eu.hitmo-top.com/get/music/20190604/Bumboks_-_Vakhteram_64765326.mp3",
+                cover: "https://i.postimg.cc/Njcqb2vc/i-12.webp"
+            },
+            {
+                title: "Ed Sheeran - Shape of You",
+                src: "https://eu.hitmo-top.com/get/music/20170830/Ed_Sheeran_-_Shape_of_You_47828367.mp3",
+                cover: "https://i.postimg.cc/76vtmg0M/ED.webp"
+            },
+            {
+                title: "Bo Burnham - 1985",
+                src: "https://eu.hitmo-top.com/get/music/20220709/Bo_Burnham_-_1985_74578521.mp3",
+                cover: "https://i.postimg.cc/4xsJF9bG/q050bg-UWta-Uvh-BGb-UHl-DFZlizv-Dd-XLj-MNIw9-Fdipu-QH-r-YFy1x-DXn-JHx-Zh-C-c-Tjh-VF0nj-GV0e-cw-V4-VSTjd8-Dh5q-Mfo-QUo-BBX4-RA.png"
+            },
+            {
+                title: "Bahroma - Пока-пора (Speed Up)",
+                src: "https://eu.hitmo-top.com/get/music/20230215/bahroma_-_poka-pora_speed_up_75425562.mp3",
+                cover: "https://i.postimg.cc/4xsJF9bG/q050bg-UWta-Uvh-BGb-UHl-DFZlizv-Dd-XLj-MNIw9-Fdipu-QH-r-YFy1x-DXn-JHx-Zh-C-c-Tjh-VF0nj-GV0e-cw-V4-VSTjd8-Dh5q-Mfo-QUo-BBX4-RA.png"
+            },
+            {
+                title: "SunThugga & Delle - Среди тысячи (Speed up)",
+                src: "https://eu.hitmo-top.com/get/music/20230428/SunThugga_Delle_-_Sredi_tysyachi_speed_up_75881792.mp3",
+                cover: "https://i.postimg.cc/BbbhvM03/q050bg-UWta-Uvh-BGb-UHl-DFZlizv-Dd-XLj-MNIw9-Fdi57-FRO6-LR39-CHv-OSRpm-Wr-MS3h-FJ0-CPDV0-Ls-J1-Qr-UCXYKYjl5ac-V8-R0s-EUqg-EV.webp"
+            },
+            {
+                title: "Arash - Эй девушка, красавица",
+                src: "https://eu.hitmo-top.com/get/music/20230219/Arash_-_JEjj_devushka_krasavica_75456188.mp3",
+                cover: "https://i.postimg.cc/4xsJF9bG/q050bg-UWta-Uvh-BGb-UHl-DFZlizv-Dd-XLj-MNIw9-Fdipu-QH-r-YFy1x-DXn-JHx-Zh-C-c-Tjh-VF0nj-GV0e-cw-V4-VSTjd8-Dh5q-Mfo-QUo-BBX4-RA.png"
+            },
+            {
+                title: "Manu Pilas - Bella ciao",
+                src: "https://eu.hitmo-top.com/get/music/20200606/Manu_Pilas_-_Bella_Ciao_69827082.mp3",
+                cover: "https://i.postimg.cc/mrwfzX01/i-9.webp"
+            },
+            {
+                title: "Тхагалегов Мурат - За тебя калым отдам",
+                src: "https://eu.hitmo-top.com/get/music/20110312/Tkhagalegov_Murat_-_Za_tebya_kalym_otdam_610127.mp3",
+                cover: "https://i.postimg.cc/RVnkQVkB/i-10.webp"
+            },
+            {
+                title: "Нервы - Счастье (Speed Up)",
+                src: "https://eu.hitmo-top.com/get/music/20230414/Nervy_-_schaste_speed_up_75781249.mp3",
+                cover: "https://i.postimg.cc/Bn31JtsZ/i-9.webp"
+            },
+            {
+                title: "Кузя - Шняга Шняжная (Remix)",
+                src: "https://eu.hitmo-top.com/get/music/20230509/SHNYAGA_SHNYAZHNAYA_REMIX_-_KUZYA_75940398.mp3",
+                cover: "https://i.postimg.cc/q7x7QGC2/i-11.webp"
+            },
+            {
+                title: "НЭНСИ - Чистый лист (Speed Up) (Nightcore)",
+                src: "https://storage4.lightaudio.ru/dm/399231dc/23186b28/Нэнси%20—%20Чистый%20лист%20speed%20up.mp3?d=245&v=bba45b4064",
+                cover: "https://i.postimg.cc/4xsJF9bG/q050bg-UWta-Uvh-BGb-UHl-DFZlizv-Dd-XLj-MNIw9-Fdipu-QH-r-YFy1x-DXn-JHx-Zh-C-c-Tjh-VF0nj-GV0e-cw-V4-VSTjd8-Dh5q-Mfo-QUo-BBX4-RA.png"
+            },
+            // Добавьте остальные треки
+        ];
+
+        let currentTrackIndex = 0;
+        const audio = new Audio(tracks[currentTrackIndex].src);
+        const playPauseButton = document.getElementById('play-pause');
+        const progressBar = document.getElementById('progress-bar');
+        const coverImage = document.getElementById('cover');
+        const trackTitle = document.getElementById('track-title');
+
+        function loadTrack() {
+            audio.src = tracks[currentTrackIndex].src;
+            coverImage.src = tracks[currentTrackIndex].cover;
+            trackTitle.textContent = tracks[currentTrackIndex].title;
+            audio.load();
+        }
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playPauseButton.textContent = "❚❚"; // Пауза
+            } else {
+                audio.pause();
+                playPauseButton.textContent = "▶️"; // Воспроизведение
+            }
+        }
+
+        function nextTrack() {
+            currentTrackIndex = (currentTrackIndex + 1) % tracks.length;
+            loadTrack();
+            audio.play();
+            playPauseButton.textContent = "❚❚"; // Пауза
+        }
+
+        function prevTrack() {
+            currentTrackIndex = (currentTrackIndex - 1 + tracks.length) % tracks.length;
+            loadTrack();
+            audio.play();
+            playPauseButton.textContent = "❚❚"; // Пауза
+        }
+
+        audio.addEventListener('ended', nextTrack);
+        audio.addEventListener('timeupdate', () => {
+            const progress = (audio.currentTime / audio.duration) * 100;
+            progressBar.style.width = progress + '%';
+        });
+
+        // Перемещение по прогресс-бару
+        document.getElementById('progress').addEventListener('click', (event) => {
+            const progressWidth = event.target.clientWidth;
+            const clickPosition = event.offsetX; // Позиция клика
+            const newTime = (clickPosition / progressWidth) * audio.duration; // Новое время
+            audio.currentTime = newTime; // Устанавливаем новое время воспроизведения
+        });
+
+        window.onload = () => {
+            loadTrack();
+            // Загружаем статус при загрузке страницы
+            fetchServerStatus();
+        };
+
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
